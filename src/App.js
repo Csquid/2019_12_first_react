@@ -6,12 +6,34 @@
 import React from 'react';
 import Potato from './Potato';
 
+const iLikeHuman = [
+  {
+    id: 1,
+    name: "Park Bo Young",
+    img_url: "https://upload.wikimedia.org/wikipedia/commons/f/fb/160511_Park_Bo-young.jpg"
+  },
+  {
+    id: 2,
+    name: "Ha Yeonsu",
+    img_url: "http://mintstudio.com/wp-content/uploads/2015/01/2V4A8045v2.jpg"
+  }
+]
+
 function Food(props) {
   return <h3>I Like {props.name} </h3>
 }
 
 function Apple({user_name}) {
   return <h3>User Name is {user_name} </h3>
+}
+
+function Human({name, picture}) {
+  return (
+    <div>
+      <h3>I Like Human is {name}</h3>
+      <img src={picture} alt="fuck"/>
+    </div>
+  )
 }
 
 function App(props) {
@@ -35,6 +57,15 @@ function App(props) {
       <Potato />
       <Apple user_name = "lake0019"/>
       <Apple user_name = "dmsqlctnekf"/>
+      { iLikeHuman.map( 
+        (human, index) => 
+        <Human 
+          id={index}
+          name={human.name} 
+          picture={human.img_url} 
+        />) 
+      }
+        
     </div>
   );
 }
