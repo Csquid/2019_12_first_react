@@ -26,7 +26,7 @@ const Children = (props) => {
   return <div>안녕하세요. {props.children} 님</div>
 }
 
-function App() {
+function Property() {
   return (
     <div>
       <h1>Hello World!</h1>
@@ -35,8 +35,8 @@ function App() {
       {/* name, fav 같은 것을 property라고 한다 (속성) 사용자가 속성의 이름을 원하는걸로 만들어줄수있다.*/}
       <Food 
         name = "kimchi" 
-        something = { true } 
-        papapapap = { ["hello", 1, 2, 3, 4, true] }
+        something = {true}
+        papapapap = { [0, 1, 2, 3, 4, 5] }
       />
 
       {/*
@@ -45,8 +45,8 @@ function App() {
         <Food name = "chukumi"/>
       */}
 
-      {["ramen", "samgiopsal", "chukumi"].map(foodName => 
-        <Food name={foodName}/>
+      {["ramen", "samgiopsal", "chukumi"].map((foodName, index) => 
+        <Food name={foodName} key={index}/>
       )}
       
       <Potato />
@@ -65,8 +65,8 @@ function App() {
         />) 
       }
 
-      {["정준영", "이순신"].map(name => 
-        <Children>
+      {["정준영", "이순신"].map((name, index) => 
+        <Children key={index}>
           {name}
         </Children>  
       )}
@@ -80,4 +80,10 @@ Singer.propTypes = {
   rating: PropTypes.number.isRequired,
   picture: PropTypes.string.isRequired
 }
-export default App;
+
+Food.propTypes = {
+  name: PropTypes.string.isRequired,
+  something: PropTypes.bool,
+  papapapap: PropTypes.arrayOf(PropTypes.number)
+}
+export default Property;
