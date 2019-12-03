@@ -4,13 +4,37 @@
 */
 
 import React from 'react';
-import Tomato from './Tomato';
+import Potato from './Potato';
 
-function App() {
+function Food(props) {
+  return <h3>I Like {props.name} </h3>
+}
+
+function Apple({user_name}) {
+  return <h3>User Name is {user_name} </h3>
+}
+
+function App(props) {
+  console.log(props);
   return (
     <div>
-        <h1>Hello World!</h1>
-        <Tomato />
+      <h1>Hello World!</h1>
+      {/* Component에  정보를 보내는 방법 */}
+      {/* name과 같이 정해져있지않다.*/}
+      {/* name, fav 같은 것을 property라고 한다 (속성) 사용자가 속성의 이름을 원하는걸로 만들어줄수있다.*/}
+      <Food 
+        name = "kimchi" 
+        something = { true } 
+        papapapap = {
+          ["hello", 1, 2, 3, 4, true]
+        }
+      />
+      <Food name = "ramen"/>
+      <Food name = "samgiopsal"/>
+      <Food name = "chukumi"/>
+      <Potato />
+      <Apple user_name = "lake0019"/>
+      <Apple user_name = "dmsqlctnekf"/>
     </div>
   );
 }

@@ -8,5 +8,5 @@ import App from './App';
     ReactDOM.render(<App /><Tomato />, document.getElementById('potato'));
     이게 안되는 이유는 react application은 하나의 component 만을 rendering해야하기 때문이다.
 */
-ReactDOM.render(<App />, document.getElementById('potato'));
+ReactDOM.render(<App lock="send Information Test"/>, document.getElementById('potato'));
 //ReactDOM.render(<Tomato />, document.getElementById('tomato'));
