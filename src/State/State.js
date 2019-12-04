@@ -1,15 +1,15 @@
 import React from 'react';
+
+import '../include/bootstrap'
+
 import PropTypes from 'prop-types';
 import Counter from './Counter';
+import Movies from './Movies';
 
 class State extends React.Component {
     constructor(props) {
         super(props);
     }
-    state = {
-        isLoading: true,
-        movies: []
-    };
 
     /*
 
@@ -26,20 +26,11 @@ class State extends React.Component {
     }
     */
 
-    componentDidMount() {
-        setTimeout(() => {
-            this.setState({ isLoading: false, book: true })
-        }, 6000)
-    }
-
     render() {
-        const {isLoading} = this.state;
-        console.log("I'm Rendering");
         return (
             <div>
-                <div>{ isLoading ? "Loading" : "We are Ready" }</div>
-                <br />
-                {/*<Counter />*/}
+                {/*<Counter >*/}
+                <Movies />
             </div>
         );
     }

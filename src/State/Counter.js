@@ -21,9 +21,11 @@ class Counter extends React.Component {
       return (
       <div>
         <h1>The number is { this.state.count }</h1>
-        <button onClick={this.add}>Add</button>
-        <button onClick={this.minus}>Minus</button>
+        <button type="button" className="btn btn-primary" onClick={this.add}>Add</button>
+        <button type="button" className="btn btn-primary" onClick={this.minus}>Minus</button>
+        
       </div>
+      
       );
     }
 }
